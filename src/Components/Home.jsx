@@ -11,6 +11,7 @@ const Home = () => {
                 <div className='flex-col mt-20  '>
                     <div className='w-[140px] h-[49px] md:w-[150px] md:h-[55px]  bg-white rounded-full'>
                         <div className='flex items-center mb-5  relative'>
+                            <h1>CD working Successfully</h1>
                             <img src={userDP} alt="User DP" className='w-10 h-10 md:w-12 md:h-12 m-1  rounded-full border-2 border-white ' />
                             <div className='ml-1 text-gray-700'>
                                 <p className='text-sm'>Bryan has</p>
