@@ -1,6 +1,6 @@
 import React from 'react'
 import About from '../Components/About'
-import Blog from '../Components/blog'
+import Blog from '../Components/Blog'
 import Blog_details from '../Components/Blog_details'
  export const Blog_page = () => {
   return (

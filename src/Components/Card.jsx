@@ -1,7 +1,7 @@
 import React from 'react'
 import facebookLogo from '../assets/facebook.png'
 import twitterLogo from '../assets/twitter.png'
-import instagramLogo from '../assets/insta.png'
+import instagramLogo from '../assets/Insta.png'
 import youtubeLogo from '../assets/youtube.png'
 
 const data = [

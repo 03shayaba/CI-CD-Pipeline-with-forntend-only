@@ -2,7 +2,7 @@ import React from 'react'
 import breadcrumb from '../assets/breadcrumb-bg.jpg'
 import facebook from '../assets/facebook.png'
 import twitter from '../assets/twitter.png'
-import instagram from '../assets/insta.png'
+import instagram from '../assets/Insta.png'
 import Youtube from '../assets/youtube.png'
 
 const About = ({ about, title }) => {

@@ -2,7 +2,7 @@ import React from 'react'
 import About from '../Components/About'
 import Social from '../Components/Social'
 import ImageSlider from '../Components/ImageSlider'
-import ImageSliderNext from '../Components/ImageSlidernext'
+import ImageSliderNext from '../Components/ImageSliderNext'
 import Partners from '../Components/Partners'
 import Card from '../Components/Card'
 

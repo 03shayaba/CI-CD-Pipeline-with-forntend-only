@@ -1,7 +1,7 @@
 import React from 'react'
 import About from '../Components/About'
 import CardsGallery from '../Components/CardsGallery'
-import Slider_stream from '../Components/slider_stream'
+import Slider_stream from '../Components/Slider_stream'
 import Streaming1 from '../Components/Streaming1'
 import  Stream_details from '../Components/Stream_details'
 

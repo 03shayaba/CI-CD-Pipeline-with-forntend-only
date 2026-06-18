@@ -7,7 +7,7 @@ import Services from '../Components/Services'
 import Influencer from '../Components/Influencer'
 import Lives from '../Components/Lives'
 import ImageSlider from '../Components/ImageSlider'
-import ImageSliderNext from '../Components/ImageSlidernext'
+import ImageSliderNext from '../Components/ImageSliderNext'
 
 import Partners from '../Components/Partners'
 
