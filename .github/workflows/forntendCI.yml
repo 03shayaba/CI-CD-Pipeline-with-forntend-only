@@ -26,8 +26,8 @@ jobs:
              docker stop  frontend || true
              docker rm  frontend || true
 
-             docker run -d \ 
-               --name frontend \
-               -p 80:80 \
-               03shayaba/myfrontend:latest
+             docker run -d \
+                --name frontend \
+                -p 80:80 \
+                03shayaba/myfrontend:latest
 
