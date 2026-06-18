@@ -39,7 +39,21 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              <li className='pr-6'><a href="#">Pages</a></li>
+              <li className="relative group pr-6 text-black cursor-pointer">  
+                <span  className="hover:text-red-500">Pages</span>
+                <ul className="absolute  hidden group-hover:block bg-white text-black mt-2 rounded-md shadow-lg w-50">
+                <li className="px-4 py-2 hover:text-pink-400 text-[14px]">
+                    <a href="/signuppages">Sign Up</a>
+                  </li>
+                  <hr className='text-gray-400' />
+                  <li className="px-4 py-2 hover:text-pink-400 text-[14px]">
+                    <a href="/signinpage">Sign In</a>
+                  </li>
+                  </ul>
+                  
+                  
+
+              </li>
               <li className="relative group pr-6 text-black cursor-pointer">  
                 <span  className="hover:text-red-500">Blog</span>
                 <ul className="absolute  hidden group-hover:block bg-white text-black mt-2 rounded-md shadow-lg w-50">

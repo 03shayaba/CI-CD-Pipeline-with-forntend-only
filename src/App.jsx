@@ -14,7 +14,9 @@ import { Streaming_3page } from './Pages/Streaming_2page.jsx';
 import { Streaming_page1 } from './Pages/Streaming_2page.jsx';
 import { Streaming_4page } from './Pages/Streaming_2page.jsx';
 import './index.css'
-import Blog_page from './Pages/Blog_page.jsx';
+import {Blog_page} from './Pages/Blog_page.jsx';
+import {Details} from './Pages/Blog_page.jsx';
+import {NewPage} from './Pages/NewPage.jsx';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -30,8 +32,9 @@ function App() {
           <Route path="/streaming2" element={<Streaming_2page />} />
           <Route path="/streaming3" element={<Streaming_3page />} />
           <Route path="/streaming4" element={<Streaming_4page />} />
-          {/*<Route path="/pages" element={<Pages />} />*/}
+          <Route path="/signuppages" element={<NewPage />} />
           <Route path="/blog" element={<Blog_page />} /> 
+          <Route path="/blog-details" element={<Details />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </BrowserRouter>

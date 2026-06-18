@@ -1,7 +1,8 @@
 import React from 'react'
 import About from '../Components/About'
 import Blog from '../Components/blog'
-const Blog_page = () => {
+import Blog_details from '../Components/Blog_details'
+ export const Blog_page = () => {
   return (
     <div>
         <About  about={"Latest Blog"} title={"Home / Latest Blog"}/>
@@ -10,4 +11,12 @@ const Blog_page = () => {
   )
 }
 
-export default Blog_page
+export const Details = () => {
+  return (
+    <div>
+      <About  about={"Latest Blog"} title={"Home / Latest Blog"}/>
+        <Blog_details />
+    </div>
+  )
+}
+
