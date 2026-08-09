@@ -35,41 +35,43 @@ const Services = () => {
     ]
 
     return (
-        <div className='mx-40 h-[500px] my-20 bg-[#fff1f1] rounded-xl '>
-            <div className='flex justify-between items-center p-4'>
-                <h1 className='text-4xl font-bold pl-5'>what will I give You?</h1>
-                <button className='w-35 bg-red-700 rounded mr-10  bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white text-sm font-semibold  h-[30px] hover:bg-gradient-to-l hover:from-[#fe9651] hover:via-[#fb6077] hover:to-[#f8289c]'>View All Services</button>
+        <div className='max-w-7xl mx-4 sm:mx-8 lg:mx-auto my-12 bg-[#fff1f1] rounded-2xl p-4 sm:p-8 shadow-sm'>
+            <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-gray-300'>
+                <h1 className='text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900'>What will I give You?</h1>
+                <button className='bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-lg hover:brightness-105 transition'>
+                    View All Services
+                </button>
             </div>
-            <hr className='mx-10 text-gray-400 shadow-4xl text-5xl' />
 
-            <div className='flex justify-between items-center'>
-                <div className='flex flex-col ml-10 mt-10 text-lg'>
+            <div className='flex flex-col lg:flex-row justify-between items-start gap-8 mt-6 sm:mt-8'>
+                {/* Services list */}
+                <div className='w-full lg:w-1/3 flex flex-col gap-2.5'>
                     {servicesData.map((item) => (
-                        <button ket={item.id} onClick={() => setActive(item.id)}
-                            className={`w-80 h-15 rounded-lg my-1 pl-2 text-start transition-all duration-300 
+                        <button key={item.id} onClick={() => setActive(item.id)}
+                            className={`w-full py-3.5 px-4 rounded-xl text-left font-medium text-sm sm:text-base transition-all duration-300 shadow-sm 
                 ${active === item.id
-                                    ? 'bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white'
-                                    : 'bg-white text-gray-800'
+                                    ? 'bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white shadow-md'
+                                    : 'bg-white text-gray-800 hover:bg-gray-50'
                                 }`}
                         >{item.title}</button>
                     ))}
                 </div>
-                <div className='flex bg-white rounded-lg py-6 mt-11 gap-4 ml-8  shadow-lg mr-8'>
-                    <div className=' h-70 ml-8 mb-2 '>
-                        <img className=' w-300 h-73 rounded-lg' src={Service} alt="" />
+
+                {/* Service Card */}
+                <div className='w-full lg:w-2/3 bg-white rounded-2xl p-5 sm:p-8 flex flex-col md:flex-row gap-6 shadow-md items-center'>
+                    <div className='w-full md:w-1/2 h-52 sm:h-64 flex-shrink-0'>
+                        <img className='w-full h-full object-cover rounded-xl' src={Service} alt="Service" />
                     </div>
-                    <div>
-                        <h1 className='text-lg font-bold'>Strategy Development</h1>
-                        <p className='text-sm text-gray-400 font-medium'>consectetur adipiscing elit. Donec non mattis nulla, in ultrices diam. Curabitur nec pharetra nunc. Nunc nec pellentesque nisl. Ut non mauris bibendum nunc pharetra laoreet sed eget mauris. Donec eget fermentum libero, ac aliquet lectus.</p>
-
-
+                    <div className='w-full md:w-1/2'>
+                        <h2 className='text-xl sm:text-2xl font-bold text-gray-900 mb-3'>Strategy Development</h2>
+                        <p className='text-xs sm:text-sm text-gray-600 leading-relaxed'>
+                            Consectetur adipiscing elit. Donec non mattis nulla, in ultrices diam. Curabitur nec pharetra nunc. Nunc nec pellentesque nisl. Ut non mauris bibendum nunc pharetra laoreet sed eget mauris. Donec eget fermentum libero, ac aliquet lectus.
+                        </p>
                     </div>
                 </div>
             </div>
-            
-                
         </div>
-    )
-}
+    );
+};
 
-export default Services
+export default Services;

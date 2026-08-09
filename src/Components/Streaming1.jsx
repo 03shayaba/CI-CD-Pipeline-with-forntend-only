@@ -62,61 +62,56 @@ const Streaming1 = () => {
 
     const cardToShow = images[activeCategory];
     return (
-        <div>
-            <div className='flex gap-2 justify-center items-center mt-10'>
+        <div className='max-w-7xl mx-auto px-4 sm:px-8 py-8'>
+            <div className='flex flex-wrap gap-2.5 justify-center items-center my-6'>
                 {categories.map((category) => (
-                    <div className='bg-gradient-to-r from-yellow-500 to-red-500 w-34 h-11 p-0.5 rounded-lg hover:bg-gradient-to-l hover:from-yellow-500 hover:to-pink-500'>
-                        <button onClick={() => { setActiveCategory(category) }} className={`w-full h-full bg-white hover:text-white rounded-lg hover:bg-gradient-to-l hover:from-yellow-500 hover:to-red-500 text-red-600 ${activeCategory === category ? 'bg-gradient-to-r from-yellow-500 to-red-500 text-white' : 'bg-white'}`}>{category}</button>
+                    <div key={category} className='p-0.5 rounded-xl bg-gradient-to-r from-yellow-500 to-red-500'>
+                        <button onClick={() => { setActiveCategory(category) }} className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all ${activeCategory === category ? 'bg-gradient-to-r from-yellow-500 to-red-500 text-white' : 'bg-white text-red-600 hover:bg-gray-50'}`}>{category}</button>
                     </div>
                 ))}
             </div>
 
-            <div className=' p-10'>
+            <div className='py-6'>
                 {cardToShow.map((card) => (
-                    <div key={card.id} className="relative flex flex-col justify-center items-center bg-white rounded-lg overflow-hidden">
-                        <img src={card.img} alt={card.title} className=" w-300 rounded-4xl object-cover" />
-                        <div className="absolute top-90 left-40">
-                            <IoPlay className=' border-1  border-white  text-white rounded-full p-3 hover:text-red-600 mb-2  w-12 h-12  text-5xl  hover:bg-white hover:border-1 hover:border-white' />
-                            <p className=' text-[20px] font-bold text-white mb-4 hover:text-pink-700'>Smiley woman pop party studio medium shot</p>
-                            <p className='text-white text-[18px] mb-5 font-semibold '>@facebook</p>
-
-
+                    <div key={card.id} className="relative rounded-3xl overflow-hidden shadow-xl max-w-5xl mx-auto my-6">
+                        <img src={card.img} alt={card.title} className="w-full h-64 sm:h-96 lg:h-[450px] object-cover rounded-3xl" />
+                        <div className="absolute bottom-6 left-6 right-6 z-10 text-white">
+                            <IoPlay className='border border-white text-white rounded-full p-3 hover:text-red-600 mb-2 w-12 h-12 text-4xl hover:bg-white transition cursor-pointer shadow-lg' />
+                            <p className='text-base sm:text-xl font-bold text-white mb-1 hover:text-pink-300 transition-colors'>Smiley woman pop party studio medium shot</p>
+                            <p className='text-xs sm:text-sm text-gray-200 font-semibold'>@facebook</p>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <div>
-                <div className='grid grid-cols-2 gap-6 justify-center items-center mb-10 mx-40'>
+            <div className='my-8'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto'>
                     {vedios.map((item, index) => (
-                        <div className='relative'>
-                            <img key={index} src={item} alt={`Gallery item ${index + 1}`} className="inline-block  w-full h-full rounded-4xl" />
-                            <div className="absolute top-65 left-10">
-                                <IoPlay className=' border-1  border-white  text-white rounded-full p-3 hover:text-red-600 mb-2  w-12 h-12  text-5xl  hover:bg-white hover:border-1 hover:border-white' />
-                                <p className=' text-[20px] font-bold text-white mb-4 hover:text-pink-700'>Smiley woman pop party studio medium shot</p>
-                                <p className='text-white text-[18px] mb-5 font-semibold '>@facebook</p>
-
-
+                        <div key={index} className='relative rounded-3xl overflow-hidden shadow-md group'>
+                            <img src={item} alt={`Gallery item ${index + 1}`} className="w-full h-64 sm:h-80 object-cover rounded-3xl group-hover:scale-105 transition duration-500" />
+                            <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
+                                <IoPlay className='border border-white text-white rounded-full p-2.5 hover:text-red-600 mb-2 w-10 h-10 text-3xl hover:bg-white transition cursor-pointer shadow-md' />
+                                <p className='text-sm sm:text-base font-bold text-white mb-1 hover:text-pink-300 transition-colors line-clamp-1'>Smiley woman pop party studio medium shot</p>
+                                <p className='text-xs text-gray-200 font-semibold'>@facebook</p>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
 
-            <div className=' flex justify-center items-center mb-10'>
-                    <IoIosArrowBack  className=' text-red-700 w-8 h-8'/>
-                    <ul className='flex justify-center items-center gap-2'>
-                      <li className='w-10 h-10  p-1.5 rounded-full bg-[#f5f5f5] hover:text-white hover:bg-red-700 transition  text-center'>1</li>
-                      <li className='w-10 h-10  p-1.5 rounded-full bg-[#f5f5f5] hover:text-white hover:bg-red-700 transition text-center'>2</li>
-                      <li className='w-10 h-10  p-1.5 rounded-full bg-[#f5f5f5] hover:text-white hover:bg-red-700 transition  text-center'>3</li>
-                      <li className='w-10 h-10  p-1.5 rounded-full bg-[#f5f5f5] hover:text-white hover:bg-red-700 transition  text-center'>4</li>
-                      <li className='w-10 h-10  p-1.5 rounded-full bg-[#f5f5f5] hover:text-white hover:bg-red-700 transition  text-center'>5</li>
-                      
-                    </ul>
-                    <IoIosArrowForward  className=' text-red-700 w-8 h-8'/>
-                  </div>
+            <div className='flex justify-center items-center gap-2 my-10'>
+                <IoIosArrowBack className='text-red-700 w-6 h-6 cursor-pointer hover:scale-110 transition'/>
+                <ul className='flex justify-center items-center gap-2 text-sm font-medium'>
+                    <li className='w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-700 hover:text-white transition cursor-pointer'>1</li>
+                    <li className='w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-700 hover:text-white transition cursor-pointer'>2</li>
+                    <li className='w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-700 hover:text-white transition cursor-pointer'>3</li>
+                    <li className='w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-700 hover:text-white transition cursor-pointer'>4</li>
+                    <li className='w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-700 hover:text-white transition cursor-pointer'>5</li>
+                </ul>
+                <IoIosArrowForward className='text-red-700 w-6 h-6 cursor-pointer hover:scale-110 transition'/>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Streaming1
+export default Streaming1;

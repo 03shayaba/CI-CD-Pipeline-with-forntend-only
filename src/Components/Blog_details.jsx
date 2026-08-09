@@ -36,10 +36,10 @@ const Blog_details = () => {
     ]
 
     return (
-        <div className=" px-40 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
 
             {/* Heading */}
-            <h1 className="text-4xl text-black font-bold text-center mb-12">
+            <h1 className="text-3xl sm:text-4xl text-black font-bold text-center mb-8 sm:mb-12">
                 Our Blog
             </h1>
 
@@ -164,29 +164,27 @@ const Blog_details = () => {
 
                         {/* form */}
 
-                        <form action="">
-
-                            <h1 className='text-xl font-bold mb-10 mt-10'>Leave a comment</h1>
+                        <form action="" className="space-y-4">
+                            <h1 className='text-xl font-bold mb-6 mt-10'>Leave a comment</h1>
                             
-                            <div className=' flex justify-between'>
-                            <div className='flex gap-3 '>
-                                <label htmlFor="">Your Name</label>
-                                
-                                <input className='border border-red-300 rounded-lg px-3 py-2 focus:outline-none' type="text" placeholder='Enter your name' />
+                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                                <div className='flex flex-col gap-1.5'>
+                                    <label htmlFor="" className="text-xs font-semibold text-gray-700">Your Name</label>
+                                    <input className='border border-red-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-400' type="text" placeholder='Enter your name' required />
+                                </div>
+
+                                <div className='flex flex-col gap-1.5'>
+                                    <label htmlFor="" className="text-xs font-semibold text-gray-700">Your Email</label>
+                                    <input className='border border-red-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-400' type="email" placeholder='Enter your email' required />
+                                </div>
                             </div>
 
-                            <div className='flex gap-3'>
-                                <label htmlFor="">Your Email</label>
-                                
-                                <input className='border border-red-300 rounded-lg px-3 py-2 focus:outline-none' type="email" placeholder='Enter your email' />
+                            <div className='flex flex-col gap-1.5 pt-2'>
+                                <label className='text-xs font-semibold text-gray-700' htmlFor="">Write Comment</label>
+                                <textarea className='w-full border border-red-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-400' rows="4" placeholder='Write your comment here' required></textarea>
                             </div>
-                            </div>
-                            <br />
-                            <br />
-                            <label className='mt-5 text-bold' htmlFor=""> Write Comment</label>
-                            <textarea className='w-full border border-red-300 rounded-lg px-3 py-2 focus:outline-none mt-5' rows="5" placeholder='Write your comment here'></textarea>
-                            <br />
-                            <button className='bg-red-700 text-white px-4 py-2 rounded-lg mt-5 hover:bg-red-500'>Post Comment</button>
+
+                            <button className='bg-red-700 text-white font-semibold px-6 py-2.5 rounded-lg hover:bg-red-600 transition text-sm'>Post Comment</button>
                         </form>
 
 

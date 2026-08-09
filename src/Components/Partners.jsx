@@ -47,80 +47,79 @@ const data = [
 ]
 
 const Partners = () => {
-    let settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    customPaging: i => (
-      <div  className="w-2 h-2 text-2xl  m-6 bg-gray-400 rounded-full flex items-center justify-center cursor-pointer hover:bg-red-800 " 
-        
-      >
-       
-      </div>
-    )
-};
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: { slidesToShow: 3 }
+            },
+            {
+                breakpoint: 640,
+                settings: { slidesToShow: 2 }
+            }
+        ]
+    };
     return (
-        <div className='bg-[#fff1f1] w-full h-260'>
-            <div className=' h-190 mb-60   ' style={{ backgroundImage: `url(${contactbg}) `,  }}>
-                <div className='flex justify-around items-center mx-20'>
-                    <div className=' bg-white text-black w-140 h-210 mt-30 rounded-2xl shadow-2xl mx-auto'>
-                        <form action="" className='mx-10 mt-5'>
-                            <div >
-                                <img className='' src={contactlogo} alt="" />
-                                <h1 className='text-4xl font-semibold pt-5 pb-7'>Let’s Work Together on your next Project</h1>
-                                <p className='text-gray-900 text-[16px] pb-5'>consectetur adipiscing elit. Donec non mattis nulla, in ultrices diam. Curabitur nec pharetra nunc. Nunc nec pellentesque nisl. Ut non mauris bibendum</p>
-                            </div>
-                            <div className=''>
-
-                                <label htmlFor="" className='text-[12px] font-bold  block mb-4 '>Your Name</label>
-                                
-                                <input type="text" placeholder='Enter your name' className='border border-gray-300  w-full h-11 rounded-xl text-start pl-3 bg-[#fafafa] mb-5 focus:outline-none focus:ring-0 focus:border-gray-300' />
-                                <br />
-                                <label htmlFor="" className='text-[12px] font-bold  block mb-4'>Your Email Address</label>
-                               
-                                <input type="email" placeholder='Enter your email address' className='border border-gray-300  w-full h-11 rounded-xl text-start pl-3 bg-[#fafafa] mb-5 focus:outline-none focus:ring-0 focus:border-gray-300' />
-                                <br />
-                                <label htmlFor="" className='text-[12px] font-bold  block mb-4'>Your Message</label>
-
-                                <textarea placeholder='Enter your message' className='border border-gray-300  w-full h-30 rounded-xl text-start pl-3 bg-[#fafafa] mb-5 focus:outline-none focus:ring-0 focus:border-gray-300'></textarea>
+        <div className='bg-[#fff1f1] w-full py-12 px-4 sm:px-8'>
+            <div className='max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12 rounded-3xl p-6 sm:p-10 bg-cover bg-center' style={{ backgroundImage: `url(${contactbg})` }}>
+                {/* Form Side */}
+                <div className='bg-white text-black w-full lg:w-1/2 p-6 sm:p-10 rounded-2xl shadow-2xl'>
+                    <form action="" className='space-y-4'>
+                        <div>
+                            <img className='w-10 h-10 mb-2' src={contactlogo} alt="Contact logo" />
+                            <h1 className='text-2xl sm:text-3xl lg:text-4xl font-semibold leading-tight text-gray-900 mb-2'>
+                                Let’s Work Together on your next Project
+                            </h1>
+                            <p className='text-gray-600 text-xs sm:text-sm mb-4'>
+                                Consectetur adipiscing elit. Donec non mattis nulla, in ultrices diam. Curabitur nec pharetra nunc. Nunc nec pellentesque nisl. Ut non mauris bibendum.
+                            </p>
+                        </div>
+                        <div className="space-y-3">
+                            <div>
+                                <label className='text-xs font-bold block text-gray-700 mb-1'>Your Name</label>
+                                <input type="text" placeholder='Enter your name' className='border border-gray-300 w-full px-4 py-2.5 rounded-xl bg-[#fafafa] text-sm focus:outline-none focus:ring-2 focus:ring-pink-300' />
                             </div>
                             <div>
-                                <button className='bg-gradient-to-r from-yellow-500 to-pink-500 w-34 h-11 p-0.5 rounded-lg hover:bg-gradient-to-l hover:from-yellow-500 hover:to-pink-500 mt-5  '>
-                                    Send Message
-                                </button>
+                                <label className='text-xs font-bold block text-gray-700 mb-1'>Your Email Address</label>
+                                <input type="email" placeholder='Enter your email address' className='border border-gray-300 w-full px-4 py-2.5 rounded-xl bg-[#fafafa] text-sm focus:outline-none focus:ring-2 focus:ring-pink-300' />
                             </div>
-
-                        </form>
-                    </div>
-
-                    {/* right side */}
-                    <div className='flex flex-col'>
-                        <div className=''>
-                            <img className='w-150 h-150 mt-30 mb-12' src={Img} alt="" />
-                        </div>
-                        <div>
-                            <h1 className='text-2xl font-semibold text-center '>Trusted Partners</h1>
-                            <div className='w-[500px] md:w-[600px] lg:w-[700px]  '>
-                                {/* slider */}
-                                <Slider {...settings}>
-                                    {
-                                        data.map((item) => (
-                                            <div key={item.id} className=' flex justify-center items-center mt-10 mx-10 '>
-                                                <img className=' ' src={item.img} alt="" />
-                                            </div>
-                                        ))
-                                    }
-                                </Slider>
-                                
+                            <div>
+                                <label className='text-xs font-bold block text-gray-700 mb-1'>Your Message</label>
+                                <textarea placeholder='Enter your message' rows="3" className='border border-gray-300 w-full px-4 py-2.5 rounded-xl bg-[#fafafa] text-sm focus:outline-none focus:ring-2 focus:ring-pink-300'></textarea>
                             </div>
                         </div>
+                        <div className="pt-2">
+                            <button className='bg-gradient-to-r from-yellow-500 to-pink-500 text-white font-semibold px-6 py-2.5 rounded-lg hover:brightness-105 transition shadow-md w-full sm:w-auto text-sm'>
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                {/* Right Side Illustration & Slider */}
+                <div className='w-full lg:w-1/2 flex flex-col items-center justify-center text-center'>
+                    <img className='w-full max-w-sm sm:max-w-md h-auto mb-6 object-contain' src={Img} alt="Contact partner illustration" />
+                    <div className='w-full max-w-md sm:max-w-lg'>
+                        <h2 className='text-xl sm:text-2xl font-semibold text-gray-900 mb-4'>Trusted Partners</h2>
+                        <Slider {...settings}>
+                            {data.map((item, index) => (
+                                <div key={index} className='p-4 flex justify-center items-center'>
+                                    <img className='h-8 sm:h-10 w-auto mx-auto object-contain grayscale hover:grayscale-0 transition duration-300' src={item.img} alt={`Partner ${item.id}`} />
+                                </div>
+                            ))}
+                        </Slider>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Partners
+export default Partners;

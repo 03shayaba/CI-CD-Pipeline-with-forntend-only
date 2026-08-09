@@ -28,92 +28,25 @@ const data = [
 ]
 const Card = () => {
     return (
-        // <div className='bg-white flex gap-6 flex-wrap justify-center py-10 mb-10 '>
-        //     <div className='flex  bg-white w-[280px]  rounded-lg  border  border-gray-100 p-2 shadow-2xl  mt-10'>
-        //         <div className=' flex  gap-1'>
-        //             <div className=''>
-        //                 <img src={facebookLogo} alt="Facebook Logo" />
-        //             </div>
-        //             <div>
-        //                 <h1>FaceBook</h1>
-        //                 <p>20.5k Followers</p>
-        //             </div>
-
-        //         </div>
-        //         <div>
-        //             <button>Follow Me</button>
-        //         </div>
-        //     </div>
-
-        //     <div className='flex  bg-white w-[280px]  rounded-lg  border border-gray-100  p-2 shadow-2xl  mt-10'>
-        //         <div className=' flex  gap-1'>
-        //             <div className=''>
-        //                 <img src={twitterLogo} alt="Twitter Logo" />
-        //             </div>
-        //             <div>
-        //                 <h1>FaceBook</h1>
-        //                 <p>20.5k Followers</p>
-        //             </div>
-
-        //         </div>
-        //         <div>
-        //             <button>Follow Me</button>
-        //         </div>
-        //     </div>
-        //     <div className='flex  bg-white w-[280px]  rounded-lg  border border-gray-100   p-2 shadow-2xl mt-10'>
-        //         <div className=' flex  gap-1'>
-        //             <div className=''>
-        //                 <img src={instagramLogo} alt="Instagram Logo" />
-        //             </div>
-        //             <div>
-        //                 <h1>FaceBook</h1>
-        //                 <p>20.5k Followers</p>
-        //             </div>
-
-        //         </div>
-        //         <div>
-        //             <button>Follow Me</button>
-        //         </div>
-        //     </div>
-        //     <div className='flex  bg-white w-[280px]  rounded-lg  border border-gray-100  p-2 shadow-2xl  mt-10'>
-        //         <div className=' flex  gap-1'>
-        //             <div className=''>
-        //                 <img src={youtubeLogo} alt="Facebook Logo" />
-        //             </div>
-        //             <div>
-        //                 <h1>FaceBook</h1>
-        //                 <p>20.5k Followers</p>
-        //             </div>
-
-        //         </div>
-        //         <div>
-        //             <button>Follow Me</button>
-        //         </div>
-        //     </div>
-
-        // </div>   
-        <div>
-            <div className=' flex flex-wrap items-center gap-4 justify-center   py-10 mb-10 '>
-                {data.map((item,index)=>(
-                    <div key={index} className='flex  bg-white w-[280px]  rounded-lg  border  border-gray-100 p-2 shadow-2xl  mt-10'>
-                        <div className=' flex  gap-1'>
-                            <div className=''><img src={item.logo} alt={`${item.name} Logo`} /></div>
-                            <div className='px-4'> 
-                                <h1 className='text-lg font-semibold'>{item.name}</h1>
-                                <p className='text-[11px]'>{item.followers}</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 py-6 my-4">
+            <div className='flex flex-wrap items-center gap-4 sm:gap-6 justify-center'>
+                {data.map((item, index) => (
+                    <div key={index} className='flex items-center justify-between bg-white w-full sm:w-[280px] rounded-xl border border-gray-100 p-3.5 shadow-xl hover:shadow-2xl transition-all duration-300'>
+                        <div className='flex items-center gap-3'>
+                            <img src={item.logo} alt={`${item.name} Logo`} className="w-9 h-9 object-contain" />
+                            <div> 
+                                <h1 className='text-base font-semibold text-gray-900'>{item.name}</h1>
+                                <p className='text-xs text-gray-500'>{item.followers}</p>
                             </div>
-
                         </div>
-                        <div className='pl-3'>
-                            <button className=' bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white text-sm font-semibold rounded-md w-[90x] h-[30px] hover:bg-gradient-to-l hover:from-[#fe9651] hover:via-[#fb6077] hover:to-[#f8289c] '>Follow Me</button>
-                        </div>
+                        <button className='bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white text-xs font-semibold px-3 py-1.5 rounded-md hover:brightness-105 transition'>
+                            Follow Me
+                        </button>
                     </div>
                 ))}
             </div>
         </div>
-
-
-    )
-}
+    );
+};
 
 export default Card

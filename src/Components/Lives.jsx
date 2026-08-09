@@ -25,33 +25,37 @@ const livesData =[
 ]
 const Lives = () => {
   return (
-    <div className='text-white bg-transparent flex  flex-col justify-center gap-10 mx-20 my-20'>
-     
-    {livesData.map((item, index)=>(
-        <div  className='flex  w-290 mx-30 h-85  bg-white/14  rounded-4xl' key={item.id}>
-            <div key={index} className='w-240 pt-4 pl-4 pr-2 rounded-4xl '>
-                <img className='rounded-xl w-full' src={item.img1} alt="" />
+    <div className='text-white bg-transparent flex flex-col justify-center gap-8 max-w-5xl mx-auto my-8 px-2'>
+      {livesData.map((item) => (
+        <div className='flex flex-col md:flex-row items-center bg-white/10 backdrop-blur-md rounded-3xl p-4 sm:p-6 gap-6 shadow-xl border border-white/10' key={item.id}>
+          <div className='w-full md:w-5/12 flex-shrink-0'>
+            <img className='rounded-2xl w-full h-48 sm:h-56 object-cover' src={item.img1} alt={item.title1} />
+          </div>
+          <div className='w-full md:w-7/12 flex flex-col justify-between space-y-3'>
+            <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white text-gray-800 w-fit shadow-sm'>
+              <img className='w-5 h-5 object-contain' src={item.img2} alt={item.title2} />
+              <span className='text-xs font-semibold'>{item.title2}</span>
             </div>
+            
             <div>
-                <div className='mt-8 ml-5'>
-                    <a href="#" className='flex items-center gap-2 mt-4 ml-4 w-32 p-1 h-8 rounded-full bg-white' w>
-                    <img className='pl-3 w-7 h-4' src={item.img2} alt="" />
-                    <h1 className='text-gray-700 text-[12px]'>{item.title2}</h1>
-                    </a>
-                </div>
-                <div className='ml-10 mt-4'>
-                    <h1 className='text-xl font-semibold py-2'>{item.title1}</h1>
-                    <p className='text-[13px] pb-2'> {item.date}</p>
-                    <hr className='text-gray-600  shadow-4xl text-4xl'/>
-                    <p className='text-[14px] text-gray-400 mt-4'>{item.desc}</p>
-                </div>
-                <div className='ml-10 mt-8  flex justify-center items-center bg-gradient-to-r from-yellow-500 to-pink-500 w-28 h-10 p-0.5 rounded-lg hover:bg-gradient-to-l hover:from-yellow-500 hover:to-pink-500'>
-                    <button> Book Now</button>
-                </div>
+              <h2 className='text-lg sm:text-xl font-bold text-white leading-snug'>{item.title1}</h2>
+              <p className='text-xs text-pink-300 font-medium mt-1'>{item.date}</p>
             </div>
-        </div>))}
-    </div>
-  )
-}
 
-export default Lives
+            <hr className='border-gray-700/60' />
+
+            <p className='text-xs sm:text-sm text-gray-300 line-clamp-3 leading-relaxed'>{item.desc}</p>
+
+            <div className='pt-2'>
+              <button className='bg-gradient-to-r from-yellow-500 to-pink-500 text-white text-xs sm:text-sm font-semibold px-6 py-2 rounded-lg hover:brightness-110 transition shadow-md'>
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Lives;

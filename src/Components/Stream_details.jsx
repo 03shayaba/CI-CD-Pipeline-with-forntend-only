@@ -53,112 +53,88 @@ const SamplePrevArrow = (props) => {
 };
 const Stream_details = () => {
     var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToScroll: 1,
-    slidesToShow: 2,
-     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-  };
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToScroll: 1,
+        slidesToShow: 2,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: { slidesToShow: 1 }
+            }
+        ]
+    };
     return (
-        <div>
-            <div className=' relative flex justify-center items-center'>
-                <img src={img} alt="Video Details" className=' rounded-4xl mt-15 w-250 mb-15' />
-                <div className='absolute top-65 left-1/2'>
-                    <IoPlay className=' border  border-gray-300  text-white rounded-full  hover:text-red-600 p-8  w-22 h-22  text-5xl  hover:bg-white hover:border-1 hover:border-white' />
+        <div className='w-full py-8'>
+            <div className='relative flex justify-center items-center max-w-5xl mx-auto px-4 my-6'>
+                <img src={img} alt="Video Details" className='rounded-3xl w-full h-64 sm:h-96 lg:h-[450px] object-cover shadow-xl' />
+                <div className='absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/40 transition rounded-3xl'>
+                    <IoPlay className='border border-white text-white rounded-full p-4 hover:text-red-600 w-16 h-16 sm:w-20 sm:h-20 text-5xl hover:bg-white transition cursor-pointer shadow-2xl' />
                 </div>
             </div>
 
+            <div className='max-w-4xl mx-auto px-4 sm:px-8 space-y-6'>
+                <div className='flex items-center gap-2 text-red-600 font-semibold text-xs sm:text-sm'>
+                    <IoPricetagOutline className='text-base' />
+                    <span>Brand Awareness</span>
+                </div>
 
-            <div className='mx-50 flex '>
-                <IoPricetagOutline className='mx-2 text-xl text-red-700' />
-                <p className='text-gray-800 text-[14px] font-semibold'>brand Awareness</p>
-            </div>
-
-            <div className='flex flex-col mx-50'>
-                <div className='text-2xl font-semibold'>Dance Your Way to Brand Awareness</div>
-                <div className=" flex justify-between mx-0 mt-5">
-                    <h1>Share Now</h1>
-                    <div className='flex justify-end mt-2 text-3xl gap-1 '>
-                        <RiFacebookLine className='border  w-7 h-7 rounded-full p-1  ' />
-                        <TiSocialTwitter className='border  w-7 h-7 rounded-full p-1  ' />
-                        <LiaInstagram className='border  w-7 h-7 rounded-full p-1  ' />
-                        <RiYoutubeFill className='border  w-7 h-7 rounded-full p-1  ' />
+                <div>
+                    <h1 className='text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4'>Dance Your Way to Brand Awareness</h1>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-gray-200">
+                        <span className='font-semibold text-gray-700 text-sm'>Share Now</span>
+                        <div className='flex items-center gap-2 text-xl text-gray-700'>
+                            <a href="#" className='border border-gray-300 p-1.5 rounded-full hover:bg-red-600 hover:text-white transition'><RiFacebookLine /></a>
+                            <a href="#" className='border border-gray-300 p-1.5 rounded-full hover:bg-red-600 hover:text-white transition'><TiSocialTwitter /></a>
+                            <a href="#" className='border border-gray-300 p-1.5 rounded-full hover:bg-red-600 hover:text-white transition'><LiaInstagram /></a>
+                            <a href="#" className='border border-gray-300 p-1.5 rounded-full hover:bg-red-600 hover:text-white transition'><RiYoutubeFill /></a>
+                        </div>
                     </div>
                 </div>
-                <p className=' text-[16px] text-gray-500 mb-8'>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. ontrary to popular belief
+
+                <p className='text-xs sm:text-sm text-gray-600 leading-relaxed'>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature.
                 </p>
-                <p className=' text-[16px] text-gray-500 mb-5' >Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
 
-                <h1 className='text-2xl font-semibold mb-2'>Dance Your Way to Brand Awareness</h1>
-                <p className=' text-[16px] text-gray-500 mb-5'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                <div>
-                    <div className=' flex  gap-2 mb-3'>
-                        <IoMdCheckmark className='text-red-700 ' />
-                        <p className=' text-[14px] font-semibold ' >Technology Support Allows Erie non-profit to Serve.</p>
-
-                    </div>
-                    <div className=' flex  gap-2 mb-3'>
-                        <IoMdCheckmark className='text-red-700' />
-                        <p className=' text-[14px] font-semibold' >Web design done Delightful Visualization</p>
-
-                    </div>
-                    <div className=' flex  gap-2 mb-3'>
-                        <IoMdCheckmark className='text-red-700' />
-                        <p className=' text-[14px] font-semibold' >Software Makes Your Profit Double if You Scale Properly.</p>
-
-                    </div>
-                </div>
-
-
-                <div className=' flex items-center   justify-center bg-[#ffe5e5] rounded-4xl mt-10 mb-5 p-5'>
-                    <RiDoubleQuotesR className='ml-5 w-30 h-30 text-red-500' />
-                    <p className="mr-10  text-[18px] text-gray-400  italic">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure</p>
-                </div>
-
-                <div>
-                    <h1 className='text-xl font-bold mb-3'>Why do we use it?</h1>
-                    <p className=' text-[16px] text-gray-500 mb-5'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                    <p className=' text-[16px] text-gray-500 mb-5'>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. ontrary to popular belief
+                <div className='bg-[#ffe5e5] rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 my-6 shadow-sm'>
+                    <RiDoubleQuotesR className='w-12 h-12 text-red-500 flex-shrink-0' />
+                    <p className="text-xs sm:text-sm text-gray-700 italic leading-relaxed">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
                     </p>
-                    <p className=' text-[16px] text-gray-500 mb-5'>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
                 </div>
 
-                <div className='flex  justify-between items-center bg-gradient-to-r from-[#ff1408] to-[#ff8a38] rounded-lg p-10 mb-20'>
-                    <div className='text-4xl text-white pl-5'>Looking to Hire Influencers?</div>
-                    <button>+ Contact With Me </button>
+                <div className='bg-gradient-to-r from-[#ff1408] to-[#ff8a38] rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row justify-between items-center gap-4 shadow-xl my-8'>
+                    <h2 className='text-xl sm:text-2xl lg:text-3xl font-bold text-center sm:text-left'>Looking to Hire Influencers?</h2>
+                    <button className='bg-white text-red-600 font-semibold px-6 py-2.5 rounded-xl hover:bg-black hover:text-white transition text-sm shadow-md flex-shrink-0'>
+                        + Contact With Me
+                    </button>
                 </div>
-                </div>
-               
-                <div className='bg-[#fff1f1]'>
-                <div className=' pt-20 pb-30'>
-                    <div className='text-4xl pl-20 font-bold mb-5'>
-                        My Related Post
-                    </div>
-                   <div className='mx-30'>
-                         <Slider {...settings}>
-                        {
-                            vedios.map((item, index) => (
-                                <div className='relative pl-10 mb-10 mt-5'>
-                                    <img key={index} src={item} alt={`Gallery item ${index + 1}`} className="inline-block    rounded-4xl" />
-                                    <div className="absolute top-75 left-20">
-                                        <IoPlay className=' border-1  border-white  text-white rounded-full p-3 hover:text-red-600 mb-2  w-12 h-12  text-5xl  hover:bg-white hover:border-1 hover:border-white' />
-                                        <p className=' text-[20px] font-bold text-white mb-4 hover:text-pink-700'>Smiley    woman pop party studio medium shot</p>
-                                        <p className='text-white text-[18px] mb-5 font-semibold '>@facebook</p>
+            </div>
+
+            {/* Related Posts */}
+            <div className='bg-[#fff1f1] py-12 px-4 sm:px-8 mt-12'>
+                <div className='max-w-6xl mx-auto'>
+                    <h2 className='text-2xl sm:text-3xl font-bold text-gray-900 mb-6'>My Related Posts</h2>
+                    <Slider {...settings}>
+                        {vedios.map((item, index) => (
+                            <div key={index} className='px-2'>
+                                <div className='relative rounded-3xl overflow-hidden shadow-md group h-64 sm:h-80'>
+                                    <img src={item} alt={`Gallery item ${index + 1}`} className="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition duration-500" />
+                                    <div className="absolute bottom-4 left-4 right-4 z-10 text-white">
+                                        <IoPlay className='border border-white text-white rounded-full p-2.5 hover:text-red-600 mb-2 w-10 h-10 text-3xl hover:bg-white transition cursor-pointer shadow-md' />
+                                        <p className='text-sm sm:text-base font-bold text-white mb-1 hover:text-pink-300 transition-colors line-clamp-1'>Smiley woman pop party studio medium shot</p>
+                                        <p className='text-xs text-gray-200 font-semibold'>@facebook</p>
                                     </div>
                                 </div>
-                            ))
-                        }
-                           </Slider>
-                        </div>
-                
+                            </div>
+                        ))}
+                    </Slider>
                 </div>
-                </div>
-             
-            
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Stream_details
+export default Stream_details;

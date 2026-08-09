@@ -1,78 +1,70 @@
-import React from 'react'
-import banner from '../assets/banner-2-img.png'
-import userDP from '../assets/user-dp-2.png'
-import love from '../assets/love.svg'
+import React from 'react';
+import banner from '../assets/banner-2-img.png';
+import userDP from '../assets/user-dp-2.png';
+import love from '../assets/love.svg';
+
 const Home = () => {
     return (
-        <div className='bg-gradient-to-r from-[#f48cd0] via-[#fec592] to-[#f5bbbf]    '>
-
-
-            <div className='  flex flex-col pl-2 pr-4 md:flex-row items-center  pt-15 md:pl-15 md:pr-15 mx-10' >
-                <div className='flex-col mt-20  '>
-                    <div className='w-[140px] h-[49px] md:w-[150px] md:h-[55px]  bg-white rounded-full'>
-                        <div className='flex items-center mb-5  relative'>
-                            <h1>CD working  Successfully</h1>
-                            <img src={userDP} alt="User DP" className='w-10 h-10 md:w-12 md:h-12 m-1  rounded-full border-2 border-white ' />
-                            <div className='ml-1 text-gray-700'>
-                                <p className='text-sm'>Bryan has</p>
-                                <p className='font-bold'>liked</p>
+        <div className='bg-gradient-to-r from-[#f48cd0] via-[#fec592] to-[#f5bbbf] overflow-hidden pt-24 sm:pt-28 pb-12 lg:pb-20'>
+            <div className='max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-10'>
+                {/* Left Text Content */}
+                <div className='flex flex-col mt-4 sm:mt-8 text-center lg:text-left items-center lg:items-start z-10'>
+                    <div className='inline-block bg-white rounded-full px-3 py-1.5 shadow-md mb-4'>
+                        <div className='flex items-center gap-2 relative pr-4'>
+                            <img src={userDP} alt="User DP" className='w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white' />
+                            <div className='text-gray-700 text-left'>
+                                <p className='text-xs leading-tight'>Bryan has</p>
+                                <p className='font-bold text-xs leading-tight'>liked</p>
                             </div>
-                            <div className='ml-4  absolute right-3 -top-3'>
-                                <img src={love} alt="Love Icon" className='w-6 h-6' />
+                            <div className='absolute right-0 -top-1'>
+                                <img src={love} alt="Love Icon" className='w-5 h-5' />
                             </div>
                         </div>
                     </div>
-                    <div className=' text-white tracking-tighter font-bold   text-4xl  md:text-6xl  xl:text-8xl xl:font-semibold  lg:tracking-tighter ' >
-                        <h1 >I'm Linda Susan</h1>
-                        <h1>Beauty & Lifestyle</h1>
-                        <h1> Influencer</h1>
+                    <div className='text-white font-bold text-3xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-tight space-y-1 sm:space-y-2'>
+                        <h1>I'm Linda Susan</h1>
+                        <h1>Beauty &amp; Lifestyle</h1>
+                        <h1>Influencer</h1>
                     </div>
 
-                    {/* buttons */}
-                    <div className='mt-4 flex gap-3'>
-                        <button className=' bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white text-lg font-semibold rounded-md w-[130px] h-[42px] hover:bg-gradient-to-l hover:from-[#fe9651] hover:via-[#fb6077] hover:to-[#f8289c] '>About Me</button>
-
-                        <div className="p-[1px] rounded-md bg-gradient-to-r from-[#f8289c] to-white inline-block">
-                            <button className="bg-[#fac1b7] md:bg-[#f7a1bd] text-white text-lg font-semibold rounded-md w-[130px] h-[40px]  hover:bg-[#f8289c]  transition-all duration-300">
+                    {/* Buttons */}
+                    <div className='mt-6 flex flex-wrap justify-center lg:justify-start gap-4'>
+                        <button className='bg-gradient-to-r from-[#fe9651] via-[#fb6077] to-[#f8289c] text-white text-base font-semibold rounded-lg px-6 py-2.5 shadow-lg hover:brightness-110 transition'>
+                            About Me
+                        </button>
+                        <div className="p-[1px] rounded-lg bg-gradient-to-r from-[#f8289c] to-white inline-block">
+                            <button className="bg-[#fac1b7] hover:bg-[#f8289c] text-white text-base font-semibold rounded-lg px-6 py-2.5 transition-all duration-300">
                                 Contact Me
                             </button>
                         </div>
-
                     </div>
                 </div>
-               <div className='w-[800] relative'>
-                <div className='  pt-4 pl-30'>
-                    <img className='w-[200px] sm:w-[300px] md:w-[500px] pt-4 md:pt-18 ml-0 lg:ml-0  ' src={banner} alt="Banner" />
-                </div>
 
-                <div className='absolute  w-27 h-21 top-[52px] right-[-79px]  md:top-[195px] md:right-[1px]   xl:top-83 xl:right-20 2xl:right-[5px]  2xl:top-[258px] md:w-32 md:h-23 rounded-[50%] bg-white bg-opacity-70  rotate-[-20deg] backdrop-blur-md  p-4 flex flex-col items-center shadow-lg'>
-                    <h1 className='rotate-[19deg]  text-2xl text-red-700 font-bold'>74K</h1>
-                    <p className='rotate-[19deg]'>Followers</p>
-                </div>
+                {/* Right Image Container */}
+                <div className='relative w-full max-w-[500px] lg:max-w-[550px] flex justify-center mt-4 lg:mt-0'>
+                    <div className='w-full flex justify-center'>
+                        <img className='w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[480px] h-auto object-contain' src={banner} alt="Banner" />
+                    </div>
 
-                
-                    <div className="absolute  top-[65%] left-[-65px] md:left-[-45px] xl:top-[69%] xl:left-[20] 2xl:top-[65%] 2xl:left-[20%]  w-[140px] h-[49px] md:w-[150px] md:h-[55px] bg-white rounded-full shadow-lg">
-                        <div className="flex items-center relative px-2 py-1">
-                            <img
-                                src={userDP}
-                                alt="User DP"
-                                className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white"
-                            />
-                            <div className="ml-2 text-gray-700">
-                                <p className="text-sm leading-tight">Bryan has</p>
-                                <p className="font-bold leading-tight">liked</p>
-                            </div>
-                            <div className="absolute right-2 -top-3">
-                                <img src={love} alt="Love Icon" className="w-6 h-6" />
-                            </div>
+                    {/* Followers Badge */}
+                    <div className='absolute top-2 right-2 sm:top-10 sm:right-6 w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-white/80 backdrop-blur-md p-2 flex flex-col items-center justify-center shadow-xl rotate-[-12deg]'>
+                        <h1 className='text-lg sm:text-2xl text-red-600 font-bold leading-none'>74K</h1>
+                        <p className='text-[10px] sm:text-xs text-gray-800 font-medium'>Followers</p>
+                    </div>
+
+                    {/* Liked Badge */}
+                    <div className="absolute bottom-4 left-2 sm:left-6 bg-white rounded-full shadow-xl px-3 py-1.5 flex items-center gap-2">
+                        <img src={userDP} alt="User DP" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white" />
+                        <div className="text-gray-700 text-xs">
+                            <p className="leading-tight">Bryan has</p>
+                            <p className="font-bold leading-tight">liked</p>
                         </div>
+                        <img src={love} alt="Love Icon" className="w-5 h-5 ml-1" />
                     </div>
                 </div>
-
             </div>
-
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default Home;

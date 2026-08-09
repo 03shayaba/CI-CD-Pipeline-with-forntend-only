@@ -48,73 +48,66 @@ const ImageSliderNext = () => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 2.6,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 0,
-        speed: 5000,
-        cssEase: "linear",
+        autoplaySpeed: 3500,
         rtl: true,
         pauseOnHover: true,
-        // nextArrow: <SampleNextArrow />,
-        // prevArrow: <SamplePrevArrow />,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: { slidesToShow: 2 }
+            },
+            {
+                breakpoint: 640,
+                settings: { slidesToShow: 1 }
+            }
+        ]
     };
     return (
-        <div className='overflow-x-hidden mb-20'>
-
+        <div className='max-w-7xl mx-auto px-4 sm:px-8 py-4 mb-16 overflow-hidden'>
             <div className='w-full'>
                 <Slider {...settings}>
-
                     {data2.map((item, index) => (
-                        <div key={index} className=' relative    overflow-hidden group   '   >
+                        <div key={index} className='px-2'>
+                            <div className='relative rounded-3xl overflow-hidden group shadow-lg h-[360px] sm:h-[400px]'>
+                                <img className='w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-500' src={item.bgImage} alt="" />
+                                
+                                {/* Gradient Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
 
-                            <img className=' rounded-4xl  object-cover  h-100 ' src={item.bgImage} alt="" />
-                            {/* Gradient Overlay (visible on hover) */}
-                            <div
-                                className="
-                                            absolute inset-0  rounded-4xl
-                                            bg-gradient-to-t from-yellow-500/70 to-pink-500/70 
-                                            opacity-0 group-hover:opacity-100
-                                            transition-opacity duration-800 mr-7"
-                            ></div>
+                                {/* Top Icons */}
+                                <div className='absolute top-4 left-4 text-white text-4xl sm:text-5xl drop-shadow-md'>
+                                    <IoPlayCircleOutline />
+                                </div>
+                                <div className='absolute top-4 right-4'>
+                                    <FaCrown className='text-amber-500 w-9 h-9 p-2 rounded-full bg-white shadow-md' />
+                                </div>
 
-                            {/* Bottom Text (hidden until hover) */}
-                            <div
-                                className="
-                                            absolute bottom-8 left-0 right-4 
-                                             text-white text-sm opacity-0 group-hover:opacity-100
-                                                transition-all duration-500 ml-8"
-                            >
-                              <a href="#" className="font-semibold text-xl   ">
-                                <h1 className='hover:text-red-700 transition-colors duration-300 relative z-10'>Smiley woman pop party studio medium shot</h1>
-                                </a>
-                                <diV className="flex items-center gap-2 mt-1">
-                                    <p className="text-[14px] ">
-                                       16M views 
-                                    </p>
-                                    <p className='text-[14px] '>|</p>
-                                    <p className='text-[14px]'>49 minutes ago</p>
-                                </diV>
+                                {/* Bottom Info */}
+                                <div className='absolute bottom-4 left-4 right-4 text-white space-y-2 z-10'>
+                                    <span className='inline-block bg-white text-red-600 font-bold text-xs px-3 py-1 rounded-full shadow-md'>
+                                        $5.00
+                                    </span>
+                                    <a href="#" className="block">
+                                        <h2 className='font-bold text-base sm:text-lg text-white hover:text-pink-300 transition-colors line-clamp-2 leading-snug'>
+                                            Smiley woman pop party studio medium shot
+                                        </h2>
+                                    </a>
+                                    <div className="flex items-center gap-2 text-xs text-gray-300">
+                                        <span>16M views</span>
+                                        <span>|</span>
+                                        <span>49 minutes ago</span>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div className=' absolute top-2 left-2 w-full h-full flex justify-center items-center '>
-                                <IoPlayCircleOutline className='text-white text-6xl absolute top-0 left-2 ' />
-
-                            </div>
-                            <div className='text-sm   '>
-                                <FaCrown className='text-gray-800 w-10 h-10 p-2 absolute top-3 right-16  rounded-full bg-white ' />
-                            </div>
-
-                                <button className='absolute  left-15 bottom-18 -translate-x-1/2 px-4 py-2 rounded-full text-sm bg-white text-red-700  text-[13px]  font-bold  transition-all duration-500 group-hover:bottom-23 '>$5.00</button>
-
                         </div>
                     ))}
-
                 </Slider>
             </div>
-
         </div>
-    )
-}
+    );
+};
 
-export default ImageSliderNext
+export default ImageSliderNext;

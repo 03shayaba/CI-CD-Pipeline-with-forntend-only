@@ -32,22 +32,20 @@ const AddressData = [
 
 const Address = () => {
   return (
-    <div>
-        <div className='flex  justify-around items-center   h-[250px]  mx-40 mt-20 mb-20 '>
+    <div className='max-w-7xl mx-auto px-4 sm:px-8 my-12 sm:my-16'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
             {AddressData.map((item) => (
-                <div key={item.id} className='flex  flex-col  border border-gray-400 shadow-sm items-center  rounded-xl w-200 h-50 mx-3   '>
-                    <div className='text-3xl text-red-600 border mt-5 p-2 border-gray-400 rounded-md  '>{item.icon}</div>
-                    <div className='flex flex-col'>
-                        <h3 className='text-lg mt-2 font-bold text-center'>{item.info}</h3>
-                        <p className='text-sm mt-2 text-gray-600 text-center'>{item.title}</p>
+                <div key={item.id} className='flex flex-col items-center border border-gray-200 shadow-md p-6 rounded-2xl bg-white hover:shadow-xl transition duration-300'>
+                    <div className='text-3xl text-red-600 border p-3 border-gray-200 rounded-xl bg-red-50 mb-3'>{item.icon}</div>
+                    <div className='flex flex-col items-center text-center'>
+                        <h3 className='text-base font-bold text-gray-900 mb-1'>{item.info}</h3>
+                        <p className='text-xs text-gray-500 leading-relaxed'>{item.title}</p>
                     </div>
                 </div>
             ))}
         </div>
     </div>
-  )
-}
+  );
+};
 
-
-
-export default Address
+export default Address;

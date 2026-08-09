@@ -10,62 +10,70 @@ import footer3 from '../assets/footer-img-3.jpg'
 import footer4 from '../assets/footer-img-4.jpg'
 const Footer = () => {
   return (
-    <div className=' bg-black pb-8 '>
-    <div className=' mx-40  bg-gradient-to-r from-[#ff1408] to-[#ff8a38] rounded-lg p-15  '>
-        <div className=' text-white flex justify-between  '>
-            <div className='relative mt-2'>
-                <img  className=" " src={logo} alt="Logo" />
-               
+    <footer className='bg-black text-white pt-12 pb-8 px-4 sm:px-8'>
+      {/* Newsletter Header Box */}
+      <div className='max-w-7xl mx-auto bg-gradient-to-r from-[#ff1408] to-[#ff8a38] rounded-2xl p-6 sm:p-10 shadow-2xl'>
+        <div className='flex flex-col lg:flex-row justify-between items-center gap-6'>
+          <div className='flex-shrink-0'>
+            <a href="/"><img className="h-8 sm:h-10 w-auto" src={logo} alt="Logo" /></a>
+          </div>
 
-            </div>
-            <div className='relative'>
-                <input className='bg-white text-black w-150  h-14 shadow-2xl rounded-4xl pl-3' type="text" placeholder='Enter Email' />
-                <div className='absolute top-1 right-2 bg-gradient-to-r from-[#f8289d] to-[#ff8a38] text-white rounded-4xl px-4 py-3 cursor-pointer hover:bg-gradient-to-l hover:from-[#f8289d] hover:to-[#ff8a38] '>
-                    <button>Get NewsLetter</button>
-                </div>
-            </div>
-            <div className='flex justify-between  mt-2 text-3xl gap-5 '>
-                <RiFacebookLine className='border  w-10 h-10 rounded-full  p-2 ' />
-                <TiSocialTwitter  className='border  w-10 h-10 rounded-full  p-2 '/>
-                <LiaInstagram className='border  w-10 h-10 rounded-full  p-2 '/>
-                <RiYoutubeFill className='border  w-10 h-10 rounded-full  p-2 '/>
-            </div>
+          <div className='relative w-full lg:w-1/2 max-w-lg'>
+            <input className='bg-white text-black w-full h-12 sm:h-14 rounded-full pl-5 pr-36 text-sm focus:outline-none shadow-md' type="text" placeholder='Enter Email Address' />
+            <button className='absolute top-1 right-1 bottom-1 bg-gradient-to-r from-[#f8289d] to-[#ff8a38] text-white text-xs sm:text-sm font-semibold rounded-full px-4 sm:px-6 hover:brightness-110 transition'>
+              Get Newsletter
+            </button>
+          </div>
+
+          <div className='flex items-center gap-3 text-xl'>
+            <a href="#" className='border border-white/40 p-2.5 rounded-full hover:bg-white hover:text-red-600 transition'><RiFacebookLine /></a>
+            <a href="#" className='border border-white/40 p-2.5 rounded-full hover:bg-white hover:text-red-600 transition'><TiSocialTwitter /></a>
+            <a href="#" className='border border-white/40 p-2.5 rounded-full hover:bg-white hover:text-red-600 transition'><LiaInstagram /></a>
+            <a href="#" className='border border-white/40 p-2.5 rounded-full hover:bg-white hover:text-red-600 transition'><RiYoutubeFill /></a>
+          </div>
         </div>
-        </div>
-        <div className=' flex justify-between text-white mx-40 mt-5 text-lg font-bold '>
-            <h2>Get in touch</h2>
-            <h2>Browse Categories</h2>
-            <h2>Instagram feed</h2>
-        </div>
-         <div className='mt-3'>
-        <div className='flex justify-between text-white mx-40'>
-            <h1 className='text-gray-200 text-3xl '> <a href="#" className=''>contact.me@gmail.com</a></h1>
-            <div className='flex  text-white'>
-                <ul className='ml-5 text-gray-500 text-[14px] mt-2'>
-                    <li> <a href="#" className='hover:text-red-700'>Music</a></li>
-                    <li><a href="#" className='hover:text-red-700'>Gaming</a></li>
-                    <li><a href="#" className='hover:text-red-700'>Art</a></li>
-                </ul>
-                <ul className='ml-5 text-gray-500 text-[14px] mt-2'>
-                    <li><a href="#" className='hover:text-red-700'>Sports</a></li>
-                    <li><a href="#" className='hover:text-red-700'>Fashion</a></li>
-                    <li><a href="#" className='hover:text-red-700'>Photography</a></li>
-                </ul>
-            </div>
-            <div className=' flex '>
-                <img className='w-20 h-20 rounded-2xl ml-2' src={footer1} alt="" />
-                <img className='w-20 h-20 rounded-2xl ml-2' src={footer2} alt="" />
-                <img className='w-20 h-20 rounded-2xl ml-2' src={footer3} alt="" />
-                <img className='w-20 h-20 rounded-2xl ml-2' src={footer4} alt="" />
-            </div>
-            </div>
+      </div>
+
+      {/* Grid Links & Info */}
+      <div className='max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 mb-8'>
+        <div>
+          <h3 className='text-lg font-bold mb-3'>Get in touch</h3>
+          <p className='text-gray-300 text-lg sm:text-xl font-medium hover:text-red-500 transition-colors'>
+            <a href="mailto:contact.me@gmail.com">contact.me@gmail.com</a>
+          </p>
         </div>
 
-        <hr className='border-gray-600 mx-40 mt-7' />
-        <h2 className='text-[12px] text-center font-semibold cursor-pointer text-gray-200 mt-7'>Copyright ©2024 Developed by Influtics</h2>
-    </div>
+        <div>
+          <h3 className='text-lg font-bold mb-3'>Browse Categories</h3>
+          <div className='flex gap-8 text-sm text-gray-400'>
+            <ul className='space-y-2'>
+              <li><a href="#" className='hover:text-pink-400 transition-colors'>Music</a></li>
+              <li><a href="#" className='hover:text-pink-400 transition-colors'>Gaming</a></li>
+              <li><a href="#" className='hover:text-pink-400 transition-colors'>Art</a></li>
+            </ul>
+            <ul className='space-y-2'>
+              <li><a href="#" className='hover:text-pink-400 transition-colors'>Sports</a></li>
+              <li><a href="#" className='hover:text-pink-400 transition-colors'>Fashion</a></li>
+              <li><a href="#" className='hover:text-pink-400 transition-colors'>Photography</a></li>
+            </ul>
+          </div>
+        </div>
 
-  )
-}
+        <div>
+          <h3 className='text-lg font-bold mb-3'>Instagram Feed</h3>
+          <div className='grid grid-cols-4 gap-2'>
+            <img className='w-full h-16 sm:h-20 rounded-xl object-cover hover:opacity-80 transition cursor-pointer' src={footer1} alt="Instagram post" />
+            <img className='w-full h-16 sm:h-20 rounded-xl object-cover hover:opacity-80 transition cursor-pointer' src={footer2} alt="Instagram post" />
+            <img className='w-full h-16 sm:h-20 rounded-xl object-cover hover:opacity-80 transition cursor-pointer' src={footer3} alt="Instagram post" />
+            <img className='w-full h-16 sm:h-20 rounded-xl object-cover hover:opacity-80 transition cursor-pointer' src={footer4} alt="Instagram post" />
+          </div>
+        </div>
+      </div>
 
-export default Footer
+      <hr className='border-gray-800 max-w-7xl mx-auto my-6' />
+      <p className='text-xs text-center text-gray-400 font-medium'>Copyright © 2024 Developed by Influtics</p>
+    </footer>
+  );
+};
+
+export default Footer;

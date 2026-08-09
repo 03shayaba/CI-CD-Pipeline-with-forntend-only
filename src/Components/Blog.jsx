@@ -22,10 +22,10 @@ const Blog = () => {
   ];
 
   return (
-    <div className=" px-40 py-16">
+    <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
 
       {/* Heading */}
-      <h1 className="text-4xl text-black font-bold text-center mb-12">
+      <h1 className="text-3xl sm:text-4xl text-black font-bold text-center mb-8 sm:mb-12">
         Our Blog
       </h1>
 

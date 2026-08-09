@@ -6,62 +6,75 @@ import img4 from '../assets/checkmark-badge.svg'
 import Lives from './Lives';
 const Influencer = () => {
   return (
-    <div className=' w-full h-440  mb-10 bg-black text-white'
-      style={{ backgroundImage: `url(${img})` }}>
-      <div className='relative'>
-        <div className='absolute top-25 -left-115'>
-          <img className="w-auto h-140 animate-slow-spin" src={img2} alt="influencer" />
-          <style>
-            {`
-          @keyframes slow-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-          }
-          .animate-slow-spin {
-            animation: slow-spin 5s linear infinite; /* 👈 10s = slow rotation */
-          }
-        `}
-          </style>
-        </div>
-      </div>
-      {/* main content */}
-      <div className=' flex mx-auto justify-center items-center gap-20 '>
-        <div className=' flex flex-col gap-6 mt-30 ml-38 w-1/2'>
-          <h1 className='text-4xl font-semibold tracking-tighter'>I'm a Social Media influencer & digital content creator</h1>
-          <p className='text-sm font-nano'>consectetur adipiscing elit. Donec non mattis nulla, in ultrices diam. Curabitur nec pharetra nunc. Nunc nec pellentesque nisl. Ut non mauris bibendum nunc pharetra laoreet sed eget mauris. Donec eget fermentum libero, ac aliquet lectus.</p>
-
-          <div className=' flex'>
-            <img src={img4} alt="" />
-            <p className='text-sm pl-3 font-semibold'>Non mattis nulla, in ultrices diam</p>
-          </div>
-          <div className=' flex'>
-            <img src={img4} alt="" />
-            <p className='text-sm pl-3 font-semibold'>Web design done Delightful Visualization</p>
-          </div>
-          <div className=' flex'>
-            <img src={img4} alt="" />
-            <p className='text-sm pl-3 font-semibold'>Alienum phaedrum torquatos nec eu, vis detraxit periculis</p>
-          </div>
-          <div className=' flex'>
-            <img src={img4} alt="" />
-            <p className='text-sm pl-3 font-semibold'>Software Makes Your Profit Double if You Scale Properly.</p>
-          </div>
-          <div className='bg-gradient-to-r from-yellow-500 to-pink-500 w-34 h-11 p-0.5 rounded-lg hover:bg-gradient-to-l hover:from-yellow-500 hover:to-pink-500'>
-            <button className='w-full h-full bg-black rounded-lg hover:bg-gradient-to-l hover:from-yellow-500 hover:to-pink-500'>Contact Me</button>
-          </div>
-        </div>
-        <div className='mt-25'>
-          <img className='rounded-l-full mx-auto ' src={img3} alt="influencer" />
-        </div>
-      </div>
-
+    <div className='w-full py-16 px-4 sm:px-8 bg-black text-white relative overflow-hidden'
+      style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}>
       
-      <div className='mt-30'>
-        <hr className='mx-35 text-gray-500 shadow-4xl text-5xl ' />
-        <h1 className='text-4xl font-bold text-center mt-10 mb-10'>My Upcoming Lives</h1>
-        <hr className='mx-35 text-gray-500 shadow-4xl text-5xl ' /><Lives /></div>
+      {/* Background vector decoration */}
+      <div className='absolute top-10 -left-20 opacity-20 pointer-events-none hidden md:block'>
+        <img className="w-96 h-96 animate-slow-spin" src={img2} alt="influencer vector" />
+        <style>
+          {`
+            @keyframes slow-spin {
+              from { transform: rotate(0deg); }
+              to { transform: rotate(360deg); }
+            }
+            .animate-slow-spin {
+              animation: slow-spin 15s linear infinite;
+            }
+          `}
+        </style>
+      </div>
+
+      {/* Main Content */}
+      <div className='max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12 z-10 relative'>
+        <div className='w-full lg:w-1/2 flex flex-col gap-6 text-left'>
+          <h1 className='text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight'>
+            I'm a Social Media influencer &amp; digital content creator
+          </h1>
+          <p className='text-xs sm:text-sm text-gray-300 leading-relaxed font-light'>
+            Consectetur adipiscing elit. Donec non mattis nulla, in ultrices diam. Curabitur nec pharetra nunc. Nunc nec pellentesque nisl. Ut non mauris bibendum nunc pharetra laoreet sed eget mauris. Donec eget fermentum libero, ac aliquet lectus.
+          </p>
+
+          <div className='space-y-3.5'>
+            <div className='flex items-center gap-3'>
+              <img src={img4} alt="" className="w-5 h-5 flex-shrink-0" />
+              <p className='text-xs sm:text-sm font-semibold text-gray-200'>Non mattis nulla, in ultrices diam</p>
+            </div>
+            <div className='flex items-center gap-3'>
+              <img src={img4} alt="" className="w-5 h-5 flex-shrink-0" />
+              <p className='text-xs sm:text-sm font-semibold text-gray-200'>Web design done Delightful Visualization</p>
+            </div>
+            <div className='flex items-center gap-3'>
+              <img src={img4} alt="" className="w-5 h-5 flex-shrink-0" />
+              <p className='text-xs sm:text-sm font-semibold text-gray-200'>Alienum phaedrum torquatos nec eu, vis detraxit periculis</p>
+            </div>
+            <div className='flex items-center gap-3'>
+              <img src={img4} alt="" className="w-5 h-5 flex-shrink-0" />
+              <p className='text-xs sm:text-sm font-semibold text-gray-200'>Software Makes Your Profit Double if You Scale Properly.</p>
+            </div>
+          </div>
+
+          <div className='bg-gradient-to-r from-yellow-500 to-pink-500 w-36 h-11 p-0.5 rounded-lg hover:brightness-110 transition mt-2'>
+            <button className='w-full h-full bg-black text-white font-semibold rounded-lg hover:bg-transparent transition duration-300 text-sm'>
+              Contact Me
+            </button>
+          </div>
+        </div>
+
+        <div className='w-full lg:w-1/2 flex justify-center'>
+          <img className='w-full max-w-md lg:max-w-full rounded-3xl lg:rounded-l-full object-cover shadow-2xl' src={img3} alt="influencer" />
+        </div>
+      </div>
+
+      {/* Upcoming Lives */}
+      <div className='max-w-7xl mx-auto mt-16 sm:mt-24 px-2 sm:px-4'>
+        <hr className='border-gray-800 my-6' />
+        <h1 className='text-2xl sm:text-4xl font-bold text-center my-6'>My Upcoming Lives</h1>
+        <hr className='border-gray-800 my-6' />
+        <Lives />
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Influencer
