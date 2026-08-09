@@ -56,23 +56,6 @@ const Navbar = () => {
               </div>
             </li>
 
-            {/* Pages Dropdown */}
-            <li className="relative group py-2 cursor-pointer">
-              <span className="hover:text-red-500 transition-colors flex items-center gap-1">
-                Pages <IoChevronDown className="text-xs text-gray-700 group-hover:rotate-180 transition-transform duration-200" />
-              </span>
-              <div className="absolute left-0 top-full pt-1 hidden group-hover:block z-50">
-                <ul className="bg-white text-gray-800 rounded-xl shadow-2xl border border-gray-100 py-2 w-44 overflow-hidden animate-fadeIn">
-                  <li>
-                    <a href="/signuppages" className="block px-4 py-2.5 hover:bg-pink-50 hover:text-pink-600 font-medium text-xs xl:text-sm transition">Sign Up</a>
-                  </li>
-                  <hr className="border-gray-100 my-0.5" />
-                  <li>
-                    <a href="/signinpage" className="block px-4 py-2.5 hover:bg-pink-50 hover:text-pink-600 font-medium text-xs xl:text-sm transition">Sign In</a>
-                  </li>
-                </ul>
-              </div>
-            </li>
 
             {/* Blog Dropdown */}
             <li className="relative group py-2 cursor-pointer">
@@ -145,22 +128,6 @@ const Navbar = () => {
               )}
             </li>
 
-            {/* Mobile Submenu: Pages */}
-            <li>
-              <button
-                onClick={() => toggleSubmenu('pages')}
-                className="w-full flex justify-between items-center py-2.5 px-4 rounded-xl hover:bg-pink-50 hover:text-pink-600 transition text-left"
-              >
-                <span>Pages</span>
-                <IoChevronDown className={`transition-transform duration-200 ${openSubmenu === 'pages' ? 'rotate-180' : ''}`} />
-              </button>
-              {openSubmenu === 'pages' && (
-                <ul className="pl-4 mt-1 space-y-1 bg-gray-50 rounded-xl p-2 font-normal text-xs text-gray-700">
-                  <li><a href="/signuppages" className="block py-2 px-3 hover:text-pink-600 rounded-lg">Sign Up</a></li>
-                  <li><a href="/signinpage" className="block py-2 px-3 hover:text-pink-600 rounded-lg">Sign In</a></li>
-                </ul>
-              )}
-            </li>
 
             {/* Mobile Submenu: Blog */}
             <li>
