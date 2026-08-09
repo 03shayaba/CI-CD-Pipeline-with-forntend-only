@@ -22,13 +22,13 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <div >
-      <Navbar />
+    <div>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Hero />} />
-           <Route path="/about" element={<AboutPage />} />
-           <Route path="/streaming1" element={<Streaming_page1 />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/streaming1" element={<Streaming_page1 />} />
           <Route path="/streaming2" element={<Streaming_2page />} />
           <Route path="/streaming3" element={<Streaming_3page />} />
           <Route path="/streaming4" element={<Streaming_4page />} />
@@ -37,8 +37,8 @@ function App() {
           <Route path="/blog-details" element={<Details />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-       <Footer />
     </div>
   )
 }
